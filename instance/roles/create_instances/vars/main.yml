@@ -1,0 +1,22 @@
+---
+prefix: demo
+servers:
+  - name: app1
+    image: rhel-server-7.7-x86_64
+    flavor: m1.medium
+    key: key_rhadmin
+    security_groups: default
+    nics: "net-id=d94db38e-1cf6-42a2-b6f9-9dfe5f8bde62"
+    availability_zone: nova
+    meta: 
+      group: appservers
+
+#  - name: app2
+#    image: CloudVPS Ubuntu 16.04
+#    flavor: Standard 2
+#    key: SSH-Key
+#    nics: "net-id=00000000-0000-0000-0000-000000000000"
+#    availability_zone: NL2
+#    meta: 
+#      group: appservers
+

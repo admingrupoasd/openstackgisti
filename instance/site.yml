@@ -1,0 +1,13 @@
+---
+- name: create instances
+  hosts: localhost
+  roles:
+    - { role: create_instances }
+
+
+#- name: deploy haproxy
+#  hosts: loadbalancers
+#  user: root
+#  roles:
+#    - { role:  haproxy }
+##    - { role:  keepalived }

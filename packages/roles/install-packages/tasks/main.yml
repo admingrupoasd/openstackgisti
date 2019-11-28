@@ -1,0 +1,39 @@
+- name: Activar suscripcion a VM
+  shell: subscription-manager register --org=11869768 --activationkey=OpenStack
+
+- name: Latest version of httpd and firewalld installed
+  yum:
+    name: 
+      - httpd
+      - firewalld
+    state: latest
+
+- name: Enable service firewalld
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+
+- name: Enable service httpd 
+  service:
+    name: httpd
+    enabled: yes
+    state: started
+
+- name: Enable http firewalld
+  firewalld:
+    service: http
+    permanent: yes
+    state: enabled
+
+- name: Enable https firewalld
+  firewalld:
+    service: https
+    permanent: yes
+    state: enabled
+
+
+- name: Add files to html dir
+  copy:
+    src: files/index.html
+    dest: /var/www/html/index.html

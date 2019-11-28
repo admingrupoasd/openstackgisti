@@ -1,0 +1,11 @@
+- name: launch an instance
+  os_server:
+    state: present
+    name: vm1-luis
+    image: rhel-server-7.7-x86_64
+    key_name: key_rhadmin
+    timeout: 200
+    flavor: m1.medium
+    security_groups: default
+    auto_ip: yes
+

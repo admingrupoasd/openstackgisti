@@ -1,0 +1,12 @@
+- name: launch an instance
+  os_server:
+    state: present
+    name: "{{ rhpropd_vmname }}"
+    image: rhel-server-7.7-x86_64
+    key_name: key_rhadmin
+    timeout: 200
+    flavor: m1.medium
+    security_groups: default
+    network: internal{{ rhprod_subnet }}
+    floating_ip_pools: floating10{{ rhprod_subnet }}
+

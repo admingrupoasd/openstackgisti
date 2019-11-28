@@ -1,0 +1,7 @@
+---
+- name: Instalar paquetes en instancias de OpenStack
+  hosts: all
+  become: yes
+  roles:
+    - { role: install-packages }
+
