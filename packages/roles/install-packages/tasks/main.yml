@@ -1,5 +1,6 @@
 - name: Activar suscripcion a VM
   shell: subscription-manager register --org=11869768 --activationkey=OpenStack
+  ignore_errors: yes
 
 - name: Latest version of httpd and firewalld installed
   yum:
